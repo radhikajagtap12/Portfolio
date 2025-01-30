@@ -1,25 +1,27 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <>
-      <div class="nav">
+      <header className="nav">
         <input type="checkbox" id="nav-check" />
-        <div class="nav-header"></div>
-        <div class="nav-btn">
-          <label for="nav-check">
+        <div className="nav-header"></div>
+        <div className="nav-btn">
+          <label htmlFor="nav-check">
             <span></span>
             <span></span>
             <span></span>
           </label>
         </div>
 
-        <div class="nav-links">
+        <div className="nav-links">
           <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/login">Login</Link>
         </div>
-      </div>
+      </header>
     </>
   );
 };
