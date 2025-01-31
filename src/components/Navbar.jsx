@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
   return (
     <>
       <header className="nav">
@@ -19,7 +28,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/login">Login</Link>
+          <Link onClick={handleLogout}>Log Out</Link>
         </div>
       </header>
     </>
